@@ -36,7 +36,7 @@ const StaffDashboard: React.FC = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/users");
+        const res = await axios.get("https://staffmanagement-bn.onrender.com/api/users");
         const users = res.data as IUser[];
 
         if (Array.isArray(users)) {
@@ -66,7 +66,7 @@ const StaffDashboard: React.FC = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:8000/api/users/${id}`);
+      await axios.delete(`https://staffmanagement-bn.onrender.com/api/users/${id}`);
       const updatedUsers = users.filter((user) => user._id !== id);
       setUsers(updatedUsers);
       setMessage("User deleted successfully.");
@@ -87,7 +87,7 @@ const StaffDashboard: React.FC = () => {
 
     if (editingUser) {
       try {
-        await axios.put(`http://localhost:8000/api/users/${editingUser._id}`, editingUser);
+        await axios.put(`https://staffmanagement-bn.onrender.com/api/users/${editingUser._id}`, editingUser);
         const updatedUsers = users.map((u) =>
           u._id === editingUser._id ? { ...u, ...editingUser } : u
         );
@@ -103,7 +103,7 @@ const StaffDashboard: React.FC = () => {
       }
     } else {
       try {
-        const res = await axios.post("http://localhost:8000/api/register", newUser);
+        const res = await axios.post("https://staffmanagement-bn.onrender.com/api/register", newUser);
         setUsers([...users, res.data as IUser]);
         setMessage("User registered successfully.");
         setShowModal(false);

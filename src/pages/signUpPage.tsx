@@ -36,7 +36,7 @@ const SignUpPage: React.FC = () => {
     e.preventDefault();
     setError("");
     try {
-      await axios.post("http://localhost:8000/api/register", form);
+      await axios.post("https://staffmanagement-bn.onrender.com/api/register", form);
       navigate("/login");
     } catch (err: any) {
       setError(err.response?.data?.message || "Registration failed");
