@@ -10,8 +10,8 @@ const departments = [
 
 const statuses = [
   { value: "", label: "Select status" },
-  { value: "researcher", label: "Researcher" },
-  { value: "employee", label: "Employeee" },
+  { value: "Researcher", label: "Researcher" },
+  { value: "Employee", label: "Employeee" },
 ];
 
 const SignUpPage: React.FC = () => {
