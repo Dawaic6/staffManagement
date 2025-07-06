@@ -83,7 +83,7 @@ const StaffDashboard: React.FC = () => {
 
   const handleSave = async () => {
     setSaveStatus({ loading: true, success: false, error: false, message: "Saving... Please wait" });
-    const user = editingUser || newUser;
+    // const user = editingUser || newUser;
 
     if (editingUser) {
       try {
